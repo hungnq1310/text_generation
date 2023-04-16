@@ -66,6 +66,8 @@ def embed_questions_for_retrieval(q_ls, tokenizer, qa_embedder, device="cuda:0")
     )
     with torch.no_grad():
         q_reps = qa_embedder.embed_questions(q_ids, q_mask).cpu().type(torch.float)
+
+    print(q_ids)
     return q_reps.numpy()
 
     
